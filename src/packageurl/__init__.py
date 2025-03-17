@@ -313,6 +313,7 @@ class PackageURL(
     A purl is a package URL as defined at
     https://github.com/package-url/purl-spec
     """
+
     SCHEME: str = "pkg"
 
     type: str
@@ -509,3 +510,7 @@ class PackageURL(
         )
 
         return cls(type_, namespace, name, version, qualifiers, subpath)
+
+
+class DependencyURL(PackageURL):
+    SCHEME = "dep"
